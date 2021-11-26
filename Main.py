@@ -18,6 +18,7 @@ class Main(Ui_MainWindow, QMainWindow):
         self.Exit.clicked.connect(self.d_Exit)
         self.L_pecas.clicked.connect(self.L2_pecas)
         self.actionSalvar.triggered.connect(self.LJ.salvar)
+        self.Ver_Detalhe.clicked.connect(self.event_PD)
         
     def d_registrar_pecas(self): # Terminar prenchimento de daods da peça
         msg='Este campo é obrigatorio!'
@@ -59,16 +60,35 @@ class Main(Ui_MainWindow, QMainWindow):
         self.listPecas.clear()
 
         for p in self.LJ.List:
-            self.listPecas.addItem(f'{p["Peça"]}\t\t\t\t{self.ConRS(p["Preço"])}')
+            self.listPecas.addItem(f'{p["Peça"]}')
 
     def d_Exit(self):
         self.PR_pecas.close()
         self.PR_pecas.close()
         self.PL_pecas.close()
+        self.D_Pecas.close()
 
     def L2_pecas(self):
         self.PL_pecas.show() 
         self.update_list_pecas()
+        self.listPecas.setCurrentRow(0)
+
+    def event_PD(self):
+        nome_peca=self.listPecas.currentItem().text()
+        for v in self.LJ.List:
+            if v['Peça']==nome_peca:
+                objeto_peca=v
+                break
+        
+        prc=objeto_peca["Preço"]
+        self.D_Peca.setText(f'Peça: {objeto_peca["Peça"]}')
+        self.D_Modelo.setText(f'Modelo: {objeto_peca["Modelo"]}')
+        self.D_Dispo.setText(f'Disponíveis: {objeto_peca["Total"]}')
+        self.D_Preco.setText(f'Preço: {self.ConRS(prc)}')
+        self.D_Part.setText(f'Partileira: {objeto_peca["Partileira"]}')
+        self.Dinhero_final.setText(f'Total: {self.ConRS(prc)}' if not self.CH_M_D_O.isChecked() else f'Total: {self.ConRS(prc+objeto_peca["Mão de obra"])}')
+
+        self.D_Pecas.show()
 
     def popup(self, msg, txt):
         pp=QMessageBox()
