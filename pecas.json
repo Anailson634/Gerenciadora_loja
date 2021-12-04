@@ -1,34 +1,30 @@
-[
-    {
-        "Peça":"Painel",
+{
+    "Painel": {
         "Modelo":"Titan 160",
         "Preço":19.0,
         "Total":3,
         "Partileira":7,
         "Mão de obra":40.1
     },
-    {
-        "Peça":"carenagem",
+    "Carenagem":{
         "Modelo":"Titan 150",
         "Preço":12.0,
         "Total":3,
         "Partileira":3,
         "Mão de obra":40.87
     },
-    {
-        "Peça":"Carburador",
+    "Carburador": {
         "Modelo":"today",
         "Preço":100.0,
         "Total":3,
         "Partileira":9,
         "Mão de obra":40.89
     },
-    {
-        "Peça":"Lateral",
+    "Lateral": {
         "Modelo":"CG150",
         "Preço":45.9,
         "Total":5,
         "Partileira":1,
         "Mão de obra":40.0
     }
-]
+}

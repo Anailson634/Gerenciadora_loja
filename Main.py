@@ -24,17 +24,17 @@ class Main(Ui_MainWindow, QMainWindow):
         msg='Este campo é obrigatorio!'
         prenchido=False
 
-        v_pr=self.Preco.text().replace(' ', '')
+        v_pr=self.Preco.text().replace(' ', '').replace(',', '.')
         if v_pr=='':
             self.Preco.setPlaceholderText(msg)
             prenchido=True
             
-        v_pe=self.Pecas.text().replace(' ', '')
+        v_pe=self.Pecas.text()
         if v_pe=='':
             self.Pecas.setPlaceholderText(msg)
             prenchido=True
 
-        v_mo=self.Mao_O.text().replace(' ', '')
+        v_mo=self.Mao_O.text().replace(' ', '').replace(',', '.')
         if v_mo=='':
             self.Mao_O.setPlaceholderText(msg)
             prenchido=True
@@ -59,8 +59,8 @@ class Main(Ui_MainWindow, QMainWindow):
     def update_list_pecas(self):
         self.listPecas.clear()
 
-        for p in self.LJ.List:
-            self.listPecas.addItem(f'{p["Peça"]}')
+        for k in self.LJ.List.keys():
+            self.listPecas.addItem(k)
 
     def d_Exit(self):
         self.PR_pecas.close()
@@ -75,13 +75,13 @@ class Main(Ui_MainWindow, QMainWindow):
 
     def event_PD(self):
         nome_peca=self.listPecas.currentItem().text()
-        for v in self.LJ.List:
-            if v['Peça']==nome_peca:
+        for k, v in self.LJ.List.items():
+            if k==nome_peca:
                 objeto_peca=v
                 break
         
         prc=objeto_peca["Preço"]
-        self.D_Peca.setText(f'Peça: {objeto_peca["Peça"]}')
+        self.D_Peca.setText(f'Peça: {k}')
         self.D_Modelo.setText(f'Modelo: {objeto_peca["Modelo"]}')
         self.D_Dispo.setText(f'Disponíveis: {objeto_peca["Total"]}')
         self.D_Preco.setText(f'Preço: {self.ConRS(prc)}')
