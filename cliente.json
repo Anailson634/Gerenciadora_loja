@@ -3,14 +3,16 @@
         "Telefone":"(71) xxxxxxxxx",
         "Cidade":"xxxxxxxx",
         "Pendentes":{
-            "Carenagem":"R$52,87"
+            "Carenagem":"R$12,00"
         },
-        "Total":52.87
+        "Total":6.11
     },
     "Naah":{
         "Telefone":"(74) xxxxxxxxx",
         "Cidade":"xxxxxxxx",
-        "Pendentes":{},
-        "Total":0.0
+        "Pendentes":{
+            "Carenagem":"R$52,87"
+        },
+        "Total":52.87
     }
 }

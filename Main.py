@@ -138,21 +138,17 @@ class Main(Ui_MainWindow, QMainWindow):
         self.listDevendo.setCurrentRow(0)
 
     def event_PD(self):
-        nome_peca=self.listPecas.currentItem().text()
-        for k, v in self.LJ.List.items():
-            if k==nome_peca:
-                objeto_peca=v
-                self.nome_gl=k
-                break
-        
+        self.nome_gl=self.listPecas.currentItem().text()
+        objeto_peca=self.LJ.List[self.nome_gl]
+                
         prc=objeto_peca["Preço"]
         self.D_Peca.setText(f'Peça: {self.nome_gl}')
         self.D_Modelo.setText(f'Modelo: {objeto_peca["Modelo"]}')
         self.D_Dispo.setText(f'Disponíveis: {objeto_peca["Total"]}')
         self.D_Preco.setText(f'Preço: {self.ConRS(prc)}')
         self.D_Part.setText(f'Partileira: {objeto_peca["Partileira"]}')
-        self.tot_gl=self.ConRS(prc+objeto_peca["Mão de obra"])
-        self.Dinhero_final.setText(f'Total: {self.ConRS(prc)}' if not self.CH_M_D_O.isChecked() else f'Total: {self.tot_gl}')
+        self.tot_gl=self.ConRS(prc if not self.CH_M_D_O.isChecked() else prc+objeto_peca["Mão de obra"])
+        self.Dinhero_final.setText(f'Total: {self.tot_gl}')
 
         self.update_list_clientes()
         self.Lista_de_pessoas.setCurrentRow(0)
@@ -166,27 +162,35 @@ class Main(Ui_MainWindow, QMainWindow):
         self.update_list_pecas()
 
     def event_venda(self):
-        nome_peca=self.listPecas.currentItem().text()
-        if self.LJ.List[nome_peca]['Total']<=0:
+        #nome_peca=self.listPecas.currentItem().text()
+        if self.LJ.List[self.nome_gl]['Total']<=0:
             self.popup('Já não a mais peças disponiveis!', 'Esgotado')
         else:
-            self.LJ.List[nome_peca]['Total']-=1
+            self.LJ.List[self.nome_gl]['Total']-=1
             self.popup(f'peça vendida por {self.tot_gl}', 'Congratulations!')
         self.d_Exit()
 
     def event_fiado(self):
-        nm=self.Lista_de_pessoas.currentItem().text()
-        self.CL.Clientes[nm]["Pendentes"][self.nome_gl]=self.tot_gl
-        self.CL.Clientes[nm]["Total"]+=float(self.tot_gl.replace('R$', '').replace(',', '.'))
+        if self.LJ.List[self.nome_gl]['Total']<=0:
+            self.popup('Já não a mais peças disponiveis!', 'Esgotado')
+        else:
+            nm=self.Lista_de_pessoas.currentItem().text()
+            self.CL.Clientes[nm]["Pendentes"][self.nome_gl]=self.tot_gl
+            self.CL.Clientes[nm]["Total"]+=float(self.tot_gl.replace('R$', '').replace(',', '.'))
+            self.LJ.List[self.nome_gl]["Total"]-=1
         self.d_Exit()
 
     def botao_pagar(self):
-        pay=self.linePagar.text()
-        if float(pay)<=0 and float(pay)<=self.CL.Clientes[self.nome_gl]["Total"]:
+        try:
+            pay=self.linePagar.text().replace(',', '.')
+            if float(pay)<=0 or self.CL.Clientes[self.nome_gl]["Total"]<float(pay):
+                raise ValueError('Valor invalido')
+            else:
+                self.CL.Clientes[self.nome_gl]["Total"]-=float(pay)
+                self.d_Exit()
+        except ValueError:
+            self.linePagar.clear()
             self.linePagar.setPlaceholderText("Valor invalído!")
-        else:
-            self.CL.Clientes[self.nome_gl]["Total"]-=float(pay)
-            self.d_Exit()
 
     def event_detalhes(self):
         self.nome_gl=self.listDevendo.currentItem().text()
