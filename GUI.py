@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(500, 336)
+        MainWindow.resize(500, 331)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.Painel1 = QtWidgets.QFrame(self.centralwidget)
@@ -27,30 +27,55 @@ class Ui_MainWindow(object):
         self.R_cliente.setGeometry(QtCore.QRect(120, 10, 251, 41))
         self.R_cliente.setStyleSheet("background-color: rgb(147, 147, 147);\n"
 "border-radius: 10px;\n"
+"border-radius: 10px;\n"
+"font-family: arial;\n"
+"font-size:14px;\n"
+"text-transform: uppercase;\n"
+"font-weight:700;\n"
 "")
         self.R_cliente.setObjectName("R_cliente")
         self.R_pecas = QtWidgets.QPushButton(self.Painel1)
         self.R_pecas.setGeometry(QtCore.QRect(120, 60, 251, 41))
         self.R_pecas.setStyleSheet("background-color: rgb(147, 147, 147);\n"
 "border-radius: 10px;\n"
+"border-radius: 10px;\n"
+"font-family: arial;\n"
+"font-size:14px;\n"
+"text-transform: uppercase;\n"
+"font-weight:700;\n"
 "")
         self.R_pecas.setObjectName("R_pecas")
         self.L_pecas = QtWidgets.QPushButton(self.Painel1)
         self.L_pecas.setGeometry(QtCore.QRect(120, 110, 251, 41))
         self.L_pecas.setStyleSheet("background-color: rgb(147, 147, 147);\n"
 "border-radius: 10px;\n"
+"border-radius: 10px;\n"
+"font-family: arial;\n"
+"font-size:14px;\n"
+"text-transform: uppercase;\n"
+"font-weight:700;\n"
 "")
         self.L_pecas.setObjectName("L_pecas")
         self.F_pedido = QtWidgets.QPushButton(self.Painel1)
         self.F_pedido.setGeometry(QtCore.QRect(120, 160, 251, 41))
         self.F_pedido.setStyleSheet("background-color: rgb(147, 147, 147);\n"
 "border-radius: 10px;\n"
+"border-radius: 10px;\n"
+"font-family: arial;\n"
+"font-size:14px;\n"
+"text-transform: uppercase;\n"
+"font-weight:700;\n"
 "")
         self.F_pedido.setObjectName("F_pedido")
         self.R_conta = QtWidgets.QPushButton(self.Painel1)
         self.R_conta.setGeometry(QtCore.QRect(120, 210, 251, 41))
         self.R_conta.setStyleSheet("background-color: rgb(147, 147, 147);\n"
 "border-radius: 10px;\n"
+"border-radius: 10px;\n"
+"font-family: arial;\n"
+"font-size:14px;\n"
+"text-transform: uppercase;\n"
+"font-weight:700;\n"
 "")
         self.R_conta.setObjectName("R_conta")
         self.PR_pecas = QtWidgets.QFrame(self.centralwidget)
@@ -113,6 +138,11 @@ class Ui_MainWindow(object):
         self.BTT_peca.setGeometry(QtCore.QRect(140, 220, 201, 41))
         self.BTT_peca.setStyleSheet("background-color: rgb(147, 147, 147);\n"
 "border-radius: 10px;\n"
+"font-family: arial;\n"
+"font-size:14px;\n"
+"text-transform: uppercase;\n"
+"font-weight:700;\n"
+"\n"
 "")
         self.BTT_peca.setObjectName("BTT_peca")
         self.label_6 = QtWidgets.QLabel(self.PR_pecas)
@@ -131,6 +161,11 @@ class Ui_MainWindow(object):
         self.Exit.setGeometry(QtCore.QRect(470, 0, 21, 23))
         self.Exit.setStyleSheet("background-color: rgb(154, 6, 6);\n"
 "border-radius: 10px;\n"
+"font-family: arial;\n"
+"font-size:14px;\n"
+"text-transform: uppercase;\n"
+"font-weight:700;\n"
+"\n"
 "")
         self.Exit.setObjectName("Exit")
         self.PL_pecas = QtWidgets.QFrame(self.centralwidget)
@@ -141,9 +176,24 @@ class Ui_MainWindow(object):
         self.PL_pecas.setObjectName("PL_pecas")
         self.Ver_Detalhe = QtWidgets.QPushButton(self.PL_pecas)
         self.Ver_Detalhe.setGeometry(QtCore.QRect(70, 260, 131, 31))
+        self.Ver_Detalhe.setStyleSheet("background-color: rgb(147, 147, 147);\n"
+"border-radius: 10px;\n"
+"font-family: arial;\n"
+"font-size:14px;\n"
+"text-transform: uppercase;\n"
+"font-weight:700;\n"
+"")
         self.Ver_Detalhe.setObjectName("Ver_Detalhe")
         self.Excluir = QtWidgets.QPushButton(self.PL_pecas)
         self.Excluir.setGeometry(QtCore.QRect(270, 260, 131, 31))
+        self.Excluir.setStyleSheet("background-color: rgb(147, 147, 147);\n"
+"border-radius: 10px;\n"
+"border-radius: 10px;\n"
+"font-family: arial;\n"
+"font-size:14px;\n"
+"text-transform: uppercase;\n"
+"font-weight:700;\n"
+"")
         self.Excluir.setObjectName("Excluir")
         self.listPecas = QtWidgets.QListWidget(self.PL_pecas)
         self.listPecas.setGeometry(QtCore.QRect(2, 0, 431, 231))
@@ -209,21 +259,193 @@ class Ui_MainWindow(object):
         self.BTT_A_Vista.setGeometry(QtCore.QRect(60, 230, 181, 41))
         self.BTT_A_Vista.setStyleSheet("background-color: rgb(147, 147, 147);\n"
 "border-radius: 10px;\n"
+"font-family: arial;\n"
+"font-size:14px;\n"
+"text-transform: uppercase;\n"
+"font-weight:700;\n"
+"\n"
+"\n"
+"\n"
 "")
         self.BTT_A_Vista.setObjectName("BTT_A_Vista")
         self.BTT_Fiado = QtWidgets.QPushButton(self.D_Pecas)
         self.BTT_Fiado.setGeometry(QtCore.QRect(270, 230, 181, 41))
         self.BTT_Fiado.setStyleSheet("background-color: rgb(147, 147, 147);\n"
 "border-radius: 10px;\n"
+"font-family: arial;\n"
+"font-size:14px;\n"
+"text-transform: uppercase;\n"
+"font-weight:700;\n"
+"\n"
 "")
         self.BTT_Fiado.setObjectName("BTT_Fiado")
         self.Lista_de_pessoas = QtWidgets.QListWidget(self.D_Pecas)
         self.Lista_de_pessoas.setGeometry(QtCore.QRect(261, 15, 201, 143))
         self.Lista_de_pessoas.setObjectName("Lista_de_pessoas")
+        self.RE_Cliente = QtWidgets.QFrame(self.centralwidget)
+        self.RE_Cliente.setGeometry(QtCore.QRect(0, -20, 501, 341))
+        self.RE_Cliente.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.RE_Cliente.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.RE_Cliente.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.RE_Cliente.setObjectName("RE_Cliente")
+        self.label_7 = QtWidgets.QLabel(self.RE_Cliente)
+        self.label_7.setGeometry(QtCore.QRect(10, 40, 71, 16))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        self.label_7.setFont(font)
+        self.label_7.setObjectName("label_7")
+        self.label_8 = QtWidgets.QLabel(self.RE_Cliente)
+        self.label_8.setGeometry(QtCore.QRect(10, 98, 71, 16))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        self.label_8.setFont(font)
+        self.label_8.setObjectName("label_8")
+        self.label_9 = QtWidgets.QLabel(self.RE_Cliente)
+        self.label_9.setGeometry(QtCore.QRect(10, 130, 71, 16))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        self.label_9.setFont(font)
+        self.label_9.setObjectName("label_9")
+        self.C_nome = QtWidgets.QLineEdit(self.RE_Cliente)
+        self.C_nome.setGeometry(QtCore.QRect(50, 40, 121, 20))
+        self.C_nome.setObjectName("C_nome")
+        self.C_tel = QtWidgets.QLineEdit(self.RE_Cliente)
+        self.C_tel.setGeometry(QtCore.QRect(60, 98, 111, 20))
+        self.C_tel.setMaxLength(9)
+        self.C_tel.setObjectName("C_tel")
+        self.C_lugar = QtWidgets.QLineEdit(self.RE_Cliente)
+        self.C_lugar.setGeometry(QtCore.QRect(50, 128, 121, 20))
+        self.C_lugar.setObjectName("C_lugar")
+        self.BTT_Rcliente = QtWidgets.QPushButton(self.RE_Cliente)
+        self.BTT_Rcliente.setGeometry(QtCore.QRect(150, 230, 201, 51))
+        self.BTT_Rcliente.setStyleSheet("background-color: rgb(147, 147, 147);\n"
+"border-radius: 10px;\n"
+"border-radius: 10px;\n"
+"font-family: arial;\n"
+"font-size:14px;\n"
+"text-transform: uppercase;\n"
+"font-weight:700;\n"
+"")
+        self.BTT_Rcliente.setObjectName("BTT_Rcliente")
+        self.label_10 = QtWidgets.QLabel(self.RE_Cliente)
+        self.label_10.setGeometry(QtCore.QRect(10, 70, 71, 16))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        self.label_10.setFont(font)
+        self.label_10.setObjectName("label_10")
+        self.C_Prefixo = QtWidgets.QComboBox(self.RE_Cliente)
+        self.C_Prefixo.setGeometry(QtCore.QRect(55, 70, 118, 20))
+        self.C_Prefixo.setObjectName("C_Prefixo")
+        self.C_Prefixo.addItem("")
+        self.C_Prefixo.addItem("")
+        self.C_Prefixo.addItem("")
+        self.C_Prefixo.addItem("")
+        self.C_Prefixo.addItem("")
+        self.PR_clients = QtWidgets.QFrame(self.centralwidget)
+        self.PR_clients.setGeometry(QtCore.QRect(-1, -1, 501, 311))
+        self.PR_clients.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.PR_clients.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.PR_clients.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.PR_clients.setObjectName("PR_clients")
+        self.listDevendo = QtWidgets.QListWidget(self.PR_clients)
+        self.listDevendo.setGeometry(QtCore.QRect(35, 10, 431, 221))
+        self.listDevendo.setObjectName("listDevendo")
+        self.BTT_Detalhes = QtWidgets.QPushButton(self.PR_clients)
+        self.BTT_Detalhes.setGeometry(QtCore.QRect(130, 250, 251, 41))
+        self.BTT_Detalhes.setStyleSheet("background-color: rgb(147, 147, 147);\n"
+"border-radius: 10px;\n"
+"border-radius: 10px;\n"
+"font-family: arial;\n"
+"font-size:14px;\n"
+"text-transform: uppercase;\n"
+"font-weight:700;\n"
+"")
+        self.BTT_Detalhes.setObjectName("BTT_Detalhes")
+        self.Detalhe_cliente = QtWidgets.QFrame(self.centralwidget)
+        self.Detalhe_cliente.setGeometry(QtCore.QRect(-1, -1, 501, 321))
+        self.Detalhe_cliente.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.Detalhe_cliente.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.Detalhe_cliente.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.Detalhe_cliente.setObjectName("Detalhe_cliente")
+        self.P_Nome = QtWidgets.QLabel(self.Detalhe_cliente)
+        self.P_Nome.setGeometry(QtCore.QRect(10, 20, 171, 16))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        self.P_Nome.setFont(font)
+        self.P_Nome.setObjectName("P_Nome")
+        self.P_Telefone = QtWidgets.QLabel(self.Detalhe_cliente)
+        self.P_Telefone.setGeometry(QtCore.QRect(10, 50, 171, 16))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        self.P_Telefone.setFont(font)
+        self.P_Telefone.setObjectName("P_Telefone")
+        self.P_Lugar = QtWidgets.QLabel(self.Detalhe_cliente)
+        self.P_Lugar.setGeometry(QtCore.QRect(10, 80, 171, 16))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        self.P_Lugar.setFont(font)
+        self.P_Lugar.setObjectName("P_Lugar")
+        self.linePagar = QtWidgets.QLineEdit(self.Detalhe_cliente)
+        self.linePagar.setGeometry(QtCore.QRect(66, 210, 191, 28))
+        self.linePagar.setStyleSheet("background-color: rgb(147, 147, 147);\n"
+"border-radius: 10px;\n"
+"font-family: arial;\n"
+"font-size:14px;\n"
+"text-transform: uppercase;\n"
+"font-weight:700;\n"
+"\n"
+"")
+        self.linePagar.setText("")
+        self.linePagar.setObjectName("linePagar")
+        self.label_14 = QtWidgets.QLabel(self.Detalhe_cliente)
+        self.label_14.setGeometry(QtCore.QRect(26, 214, 31, 21))
+        font = QtGui.QFont()
+        font.setFamily("Book Antiqua")
+        font.setPointSize(20)
+        self.label_14.setFont(font)
+        self.label_14.setObjectName("label_14")
+        self.BTT_Pagar = QtWidgets.QPushButton(self.Detalhe_cliente)
+        self.BTT_Pagar.setGeometry(QtCore.QRect(90, 260, 141, 31))
+        self.BTT_Pagar.setStyleSheet("background-color: rgb(147, 147, 147);\n"
+"border-radius: 10px;\n"
+"font-family: arial;\n"
+"font-size:14px;\n"
+"text-transform: uppercase;\n"
+"font-weight:700;\n"
+"\n"
+"")
+        self.BTT_Pagar.setObjectName("BTT_Pagar")
+        self.listPendentes = QtWidgets.QListWidget(self.Detalhe_cliente)
+        self.listPendentes.setGeometry(QtCore.QRect(305, 40, 181, 241))
+        self.listPendentes.setObjectName("listPendentes")
+        self.label_15 = QtWidgets.QLabel(self.Detalhe_cliente)
+        self.label_15.setGeometry(QtCore.QRect(370, 10, 51, 21))
+        font = QtGui.QFont()
+        font.setFamily("Book Antiqua")
+        font.setPointSize(14)
+        self.label_15.setFont(font)
+        self.label_15.setObjectName("label_15")
+        self.P_Total = QtWidgets.QLabel(self.Detalhe_cliente)
+        self.P_Total.setGeometry(QtCore.QRect(380, 290, 121, 16))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        self.P_Total.setFont(font)
+        self.P_Total.setObjectName("P_Total")
         self.Painel1.raise_()
         self.PR_pecas.raise_()
         self.PL_pecas.raise_()
         self.D_Pecas.raise_()
+        self.RE_Cliente.raise_()
+        self.PR_clients.raise_()
+        self.Detalhe_cliente.raise_()
         self.Exit.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -258,13 +480,7 @@ class Ui_MainWindow(object):
         self.BTT_peca.setText(_translate("MainWindow", "Registrar"))
         self.label_6.setText(_translate("MainWindow", "Disponiveis"))
         self.Exit.setText(_translate("MainWindow", "X"))
-        self.Ver_Detalhe.setStyleSheet(_translate("MainWindow", "background-color: rgb(147, 147, 147);\n"
-"border-radius: 10px;\n"
-""))
         self.Ver_Detalhe.setText(_translate("MainWindow", "Ver detalhe"))
-        self.Excluir.setStyleSheet(_translate("MainWindow", "background-color: rgb(147, 147, 147);\n"
-"border-radius: 10px;\n"
-""))
         self.Excluir.setText(_translate("MainWindow", "Excluir"))
         self.CH_M_D_O.setText(_translate("MainWindow", "Mão de obra"))
         self.Dinhero_final.setText(_translate("MainWindow", "Total: XX,XX"))
@@ -276,6 +492,24 @@ class Ui_MainWindow(object):
         self.D_Part.setText(_translate("MainWindow", "Partileira:"))
         self.BTT_A_Vista.setText(_translate("MainWindow", "A Vista"))
         self.BTT_Fiado.setText(_translate("MainWindow", "Fiado"))
+        self.label_7.setText(_translate("MainWindow", "Nome:"))
+        self.label_8.setText(_translate("MainWindow", "Telfone:"))
+        self.label_9.setText(_translate("MainWindow", "Lugar:"))
+        self.BTT_Rcliente.setText(_translate("MainWindow", "Registrar"))
+        self.label_10.setText(_translate("MainWindow", "Prefixo:"))
+        self.C_Prefixo.setItemText(0, _translate("MainWindow", "71"))
+        self.C_Prefixo.setItemText(1, _translate("MainWindow", "73"))
+        self.C_Prefixo.setItemText(2, _translate("MainWindow", "74"))
+        self.C_Prefixo.setItemText(3, _translate("MainWindow", "75"))
+        self.C_Prefixo.setItemText(4, _translate("MainWindow", "77"))
+        self.BTT_Detalhes.setText(_translate("MainWindow", "Detalhes"))
+        self.P_Nome.setText(_translate("MainWindow", "Nome: XXX"))
+        self.P_Telefone.setText(_translate("MainWindow", "Telefone: XXX"))
+        self.P_Lugar.setText(_translate("MainWindow", "Lugar: XXX"))
+        self.label_14.setText(_translate("MainWindow", "R$"))
+        self.BTT_Pagar.setText(_translate("MainWindow", "Pagar"))
+        self.label_15.setText(_translate("MainWindow", "Items"))
+        self.P_Total.setText(_translate("MainWindow", "Total: "))
         self.menuTool.setTitle(_translate("MainWindow", "Tool"))
         self.actionSalvar.setText(_translate("MainWindow", "Salvar"))
 
